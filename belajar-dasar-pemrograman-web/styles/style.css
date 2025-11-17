@@ -1,0 +1,99 @@
+/* Atur Box Model dan Styling Dasar */
+* {
+    /* Wajib untuk konsistensi layout */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+/* HEADER Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigasi Menggunakan Flexbox */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    /* MENGGUNAKAN FLEXBOX */
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MAIN Layout - Flex Container */
+main {
+    padding: 20px;
+    
+    /* MENGGUNAKAN FLEXBOX pada container utama */
+    display: flex;
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 20px auto; 
+}
+
+/* ARTICLE Styling - Flex Item */
+article {
+    /* Menggunakan flex-grow dan flex-shrink yang jelas */
+    flex: 3 1 0; /* 3 bagian grow, 1 bagian shrink, basis 0 */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ASIDE Styling - Flex Item */
+aside {
+    /* Menggunakan flex-grow dan flex-shrink yang jelas */
+    flex: 1 1 0; /* 1 bagian grow, 1 bagian shrink, basis 0 */
+    background-color: #e0e0e8;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+aside img {
+    width: 100%; 
+    max-width: 200px; 
+    height: auto;
+    border-radius: 50%; 
+    margin-bottom: 15px;
+}
+
+/* FOOTER Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* MEDIA QUERY untuk Responsif (Mobile-Friendly) */
+@media (max-width: 768px) {
+    /* Mengubah arah Flexbox MAIN menjadi vertikal (kolom) di mobile */
+    main {
+        flex-direction: column; 
+    }
+    
+    /* Menumpuk menu di HEADER */
+    header nav ul {
+        flex-direction: column; 
+    }
+}
